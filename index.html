@@ -30,22 +30,27 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    font-size: 12px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    text-align: center;
+    flex-direction: column;
 
     color: #0a2540;
-    padding: 5px;
-
     background: linear-gradient(135deg, #ffcc00, #ff6600);
     box-shadow: 0 0 12px rgba(255, 165, 0, 0.5);
-
     position: relative;
+    text-align: center;
 }
 
-/* SOFT GLOW */
+/* TEXT INSIDE LOGO */
+.logo-circle .big {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.logo-circle .small {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* GLOW */
 .logo-circle::before {
     content: "";
     position: absolute;
@@ -81,7 +86,7 @@ nav a {
 .btn {
     background: orange;
     padding: 12px 25px;
-    color: white;
+    color: black;
     text-decoration: none;
     border-radius: 5px;
 }
@@ -106,12 +111,18 @@ nav a {
     padding: 40px;
     text-align: center;
 }
-
 .gallery img {
-    width: 250px;
-    margin: 10px;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
 }
+
+/* Hover effect */
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
 
 /* CONTACT */
 .contact {
@@ -147,7 +158,10 @@ footer {
 <body>
 
 <header class="header">
-    <div class="logo-circle">SOlrmate</div>
+    <div class="logo-circle">
+        <span class="big">SOlr</span>
+        <span class="small">mate</span>
+    </div>
 
     <nav>
         <a href="#">Home</a>
@@ -161,42 +175,120 @@ footer {
     <h2>Power Your Home With Solar</h2>
     <p>Say goodbye to load shedding. Save money today.</p>
     <br>
-    <a class="btn" href="https://wa.me/27751075413">Get Free Quote</a>
+    <a class="btn" href="https://wa.me/27751075413?text=Hello%20SOlrmate%2C%20I%20would%20like%20a%20free%20solar%20quote">Get Free Quote</a>
 </section>
 
+   
 <section id="services" class="services">
-    <h2>Our Services</h2>
+    <h2>Our Solar Packages</h2>
+<div class="service-box">
+    <h3>Small System (3kVA)</h3>
+    <ul>
+        <li>🔋 Megatron Ai Inverter</li>
+        <li>🔌 Megatron Lithium Battery (48V 5.6kWh)</li>
+        <li>☀️ 6 Solar Panels</li>
+        <li>🏠 Ideal for small homes / basic backup</li>
+        <li>💰 Price Range: R18,000 – R35,000 (Installed)</li>
+        <li>🛠️ Includes equipment + installation</li>
+    </ul>
+</div>
 
-    <div class="service-box">
-        <h3>Solar Installation</h3>
-        <p>Complete solar systems for homes & businesses.</p>
-    </div>
+    <a class="btn"
+       href="https://wa.me/27751075413?text=Hi%20I%20am%20interested%20in%20the%203kVA%20solar%20system.%20Please%20send%20me%20a%20quote."
+       target="_blank">
+       Request Quote
+    </a>
+</div>    
+      
+      <div class="service-box">
+    <h3>Medium System (5kVA)</h3>
+    <ul>
+        <li>🔋 Growatt / Megatron Inverter</li>
+        <li>🔌 1–2 Lithium Batteries (48V)</li>
+        <li>☀️ 8 Solar Panels</li>
+        <li>🏠 Ideal for medium households</li>
+        <li>💰 Price Range: R30,000 – R55,000 (Installed)</li>
+        <li>🛠️ Includes equipment + installation</li>
+    </ul>
+</div>
 
-    <div class="service-box">
-        <h3>Inverter Setup</h3>
-        <p>Professional installation & setup.</p>
-    </div>
 
-    <div class="service-box">
-        <h3>Battery Backup</h3>
-        <p>Reliable power during outages.</p>
-    </div>
-</section>
+    <a class="btn"
+       href="https://wa.me/27751075413?text=Hi%20I%20am%20interested%20in%20the%205kVA%20solar%20system.%20Please%20send%20me%20a%20quote."
+       target="_blank">
+       Request Quote
+    </a>
+</div>
+      
+        <div class="service-box">
+    <h3>Large System (10kVA)</h3>
+    <ul>
+        <li>🔋 Deye / Growatt Inverter</li>
+        <li>🔌 2–4 Lithium Batteries</li>
+        <li>☀️ 12Solar Panels</li>
+        <li>🏠 Suitable for large homes / small businesses</li>
+        <li>💰 Price Range: R60,000 – R120,000 (Installed)</li>
+        <li>🛠️ Includes equipment + installation</li>
+    </ul>
+</div>
+
+
+    <a class="btn"
+       href="https://wa.me/27751075413?text=Hi%20I%20am%20interested%20in%20the%2010KVA%20solar%20system.%20Please%20send%20me%20a%20quote."
+       target="_blank">
+       Request Quote
+    </a>
+</div>
+
+    
+  <div class="service-box">
+    <h3>Extra Large System (20kVA)</h3>
+    <ul>
+        <li>🔋 Industrial-grade Inverter System</li>
+        <li>🔌 4+ Lithium Batteries</li>
+        <li>☀️ 30 Solar Panels</li>
+        <li>🏢 Ideal for businesses / heavy usage</li>
+        <li>💰 Price Range: R150,000 – R300,000+ (Installed)</li>
+        <li>🛠️ Includes equipment + installation</li>
+    </ul>
+</div>
+
+
+
+    <a class="btn"
+       href="https://wa.me/27751075413?text=Hi%20I%20am%20interested%20in%20the%2020KVA%20solar%20system.%20Please%20send%20me%20a%20quote."
+       target="_blank">
+       Request Quote
+    </a>
+</div>
+
+<p style="margin-top:20px;">
+⚠️ Final pricing depends on site inspection, installation complexity, and selected components.
+</p>
 
 <section id="gallery" class="gallery">
     <h2>Our Projects</h2>
-    <img src="images/solar1.jpg">
-    <img src="images/solar2.jpg">
-    <img src="images/solar3.jpg">
+    <img src="image/solar1.jpg">
+    <img src="image/solar2.jpg">
+    <img src="image/solar3.jpg">
 </section>
 
 <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <p>📞 27751075413</p>
+    <p>📞 075 107 5413</p>
     <p>📍 Johannesburg</p>
-    <br>
-    <a class="btn" href="https://wa.me/27751075413">Chat on WhatsApp</a>
+    <br> 
+    
+   <a class="btn"
+href="https://wa.me/27751075413?text=Hi,%20I%20am%20interested%20in%20a%2010kVA%20solar%20system.%0A%0APlease%20assist%20me%20with%20a%20quote.%0A%0AName:%0ALocation:%0AUsage%20requirements:"
+target="_blank">
+Request Quote
+</a>
+
+
+    
 </section>
+
 
 <footer>
     <p>© 2026 SOlrmate Solar Solutions</p>
@@ -206,3 +298,5 @@ footer {
 
 </body>
 </html>
+
+
