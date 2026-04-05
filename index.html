@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOlrmate Solar Solutions</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+    background: orange;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+/* LOGO */
+.logo-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-align: center;
+
+    color: #0a2540;
+    padding: 5px;
+
+    background: linear-gradient(135deg, #ffcc00, #ff6600);
+    box-shadow: 0 0 12px rgba(255, 165, 0, 0.5);
+
+    position: relative;
+}
+
+/* SOFT GLOW */
+.logo-circle::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,204,0,0.4), transparent);
+    z-index: -1;
+}
+
+/* NAV */
+nav {
+    margin-left: auto;
+}
+
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1509395176047-4a66953fd231');
+    background-size: cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.btn {
+    background: orange;
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* SERVICES */
+.services {
+    padding: 40px;
+    text-align: center;
+}
+
+.service-box {
+    display: inline-block;
+    width: 250px;
+    margin: 15px;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 10px;
+}
+
+/* GALLERY */
+.gallery {
+    padding: 40px;
+    text-align: center;
+}
+
+.gallery img {
+    width: 250px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* CONTACT */
+.contact {
+    background: #f4f4f4;
+    padding: 40px;
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    background: #0a2540;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo-circle">SOlrmate</div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Power Your Home With Solar</h2>
+    <p>Say goodbye to load shedding. Save money today.</p>
+    <br>
+    <a class="btn" href="https://wa.me/27751075413">Get Free Quote</a>
+</section>
+
+<section id="services" class="services">
+    <h2>Our Services</h2>
+
+    <div class="service-box">
+        <h3>Solar Installation</h3>
+        <p>Complete solar systems for homes & businesses.</p>
+    </div>
+
+    <div class="service-box">
+        <h3>Inverter Setup</h3>
+        <p>Professional installation & setup.</p>
+    </div>
+
+    <div class="service-box">
+        <h3>Battery Backup</h3>
+        <p>Reliable power during outages.</p>
+    </div>
+</section>
+
+<section id="gallery" class="gallery">
+    <h2>Our Projects</h2>
+    <img src="images/solar1.jpg">
+    <img src="images/solar2.jpg">
+    <img src="images/solar3.jpg">
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>📞 27751075413</p>
+    <p>📍 Johannesburg</p>
+    <br>
+    <a class="btn" href="https://wa.me/27751075413">Chat on WhatsApp</a>
+</section>
+
+<footer>
+    <p>© 2026 SOlrmate Solar Solutions</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/27751075413">💬</a>
+
+</body>
+</html>
