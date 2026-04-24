@@ -9,27 +9,11 @@ body {
 }  
 /* MENU */  
 nav { margin-left: auto; }  
-  
+
 .menu-btn {  
     font-size: 26px;  
     color: black;  
     cursor: pointer;  
-}  
-  
-/* BUTTON */  
-.btn {  
-    background: orange;  
-    padding: 12px 20px;  
-    color: black;  
-    text-decoration: none;  
-    border-radius: 5px;  
-    display: inline-block;  
-    margin-top: 10px;  
-    font-weight: bold;  
-    transition: 0.3s;  
-}  
-.btn:hover {  
-    background: #0a2540;  
 }  
 /* BADGE */  
 .badge {  
@@ -41,8 +25,8 @@ nav { margin-left: auto; }
     display: inline-block;  
     margin-bottom: 10px;  
 }  
-  
-  
+
+
 /* SLIDER */  
 .slider {  
     max-width: 600px;  
@@ -57,7 +41,7 @@ nav { margin-left: auto; }
 .slide.active {  
     display: block;  
 }  
-  
+
 /* REVIEWS */  
 .review {  
     background: #f4f4f4;  
@@ -65,7 +49,7 @@ nav { margin-left: auto; }
     margin: 10px;  
     border-radius: 10px;  
 }  
-  
+
 /* FORM */  
 form {  
     max-width: 500px;  
@@ -77,7 +61,7 @@ input, textarea {
     margin: 10px 0;  
     padding: 10px;  
 }  
-  
+
 /* MAP */  
 iframe {  
     width: 100%;  
@@ -85,7 +69,7 @@ iframe {
     border: 0;  
     margin-top: 20px;  
 }  
-  
+
 /* FOOTER */  
 footer {  
     background: #0a2540;  
@@ -93,7 +77,7 @@ footer {
     text-align: center;  
     padding: 20px;  
 }  
-  
+
 /* FLOAT BUTTONS */  
 .wa-float, .call-float {  
     position: fixed;  
@@ -115,30 +99,101 @@ footer {
     bottom: 90px;  
     background: #0a2540;  
 }  
-  
-/* SIDE MENU */  
-.side-menu {  
-    position: fixed;  
-    top: 20px;  
-    width: 90%;  
-    max-width: 400px;  
-    height: 100%;  
-    background: orange;  
-    padding: 20px;  
-    transition: 0.4s;  
-    z-index: 2000;  
-}  
-body {  
-    overflow-x: hidden;  
-}  
-.side-menu {  
-    transform: translateX(100%);  
-}  
-  
-.side-menu.active {  
-    transform: translateX(0);  
-}  
-  
+/* SIDE MENU */
+.side-menu {
+    position: fixed;
+    top: 0;
+    width: 90%;
+    max-width: 400px;
+    height: 100vh;
+    background: orange;
+    padding: 20px 20px 80px 20px; /* extra bottom padding for button */
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    z-index: 2000;
+    overflow-y: auto; /* scrollable if content overflows */
+    box-shadow: -3px 0 15px rgba(0,0,0,0.2);
+}
+
+/* Menu active */
+.side-menu.active {
+    transform: translateX(0);
+}
+
+/* Overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 1500;
+}
+#overlay.active {
+    display: block;
+}
+
+/* Close button */
+.close-btn {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Menu links */
+.side-menu a {
+    display: block;
+    padding: 12px 0;
+    text-decoration: none;
+    color: #0a2540;
+    font-weight: bold;
+}
+
+/* Menu cards */
+.menu-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* FAQ */
+.faq-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    cursor: pointer;
+}
+.faq-item p {
+    display: none;
+    font-size: 14px;
+    color: #555;
+}
+.faq-item.active p {
+    display: block;
+}
+
+/* Fixed WhatsApp button at the bottom */
+.side-menu .btn-wa {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(90% - 40px);
+    text-align: center;
+    z-index: 2100;
+}
+
+/* Mobile adjustment: menu full width */
+@media (max-width: 768px) {
+    .side-menu {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 20px 100px 20px; /* extra bottom padding */
+    }
+}
+
 /* HEADER */  
 .header {  
     background: linear-gradient(to right, #ffa500, #ff8c00); /* Dynamic orange gradient */  
@@ -164,7 +219,7 @@ body {
     z-index: 10;  
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);  
 }  
-  
+
 /* THE NAME AS ONE WORD */  
 .logo-circle .logo-text {  
     font-size: 17px;   
@@ -173,13 +228,13 @@ body {
     white-space: nowrap;  
     z-index: 11;  
 }  
-  
+
 /* This targets only the part inside the <span> tags */  
 .logo-circle .logo-text span {  
     color: white;     /* This makes "mate" White */  
     font-weight: 700; /* Slightly thinner to make "SOlr" stand out */  
 }  
-  
+
 /* THE EXPANDING RINGS */  
 .logo-circle::before,  
 .logo-circle::after {  
@@ -196,16 +251,16 @@ body {
     z-index: -1;   
     opacity: 0;  
 }  
-  
+
 .logo-circle::before {  
     animation: moveOutward 2s infinite linear;  
 }  
-  
+
 .logo-circle::after {  
     animation: moveOutward 2s infinite linear;  
     animation-delay: 1s;  
 }  
-  
+
 @keyframes moveOutward {  
     0% {  
         width: 100%;  
@@ -225,15 +280,15 @@ body {
     white-space: nowrap;  
     z-index: 11;  
 }  
-  
+
 .logo-circle .logo-text span {  
     color: #0a2540; /* White for mate */  
 }  
-  
-  
+
+
 /* MENU */  
 nav { margin-left: auto; }  
-  
+
 .menu-btn {  
     font-size: 26px;  
     color: black;  
@@ -241,7 +296,7 @@ nav { margin-left: auto; }
 }  
 /* UPDATED MENU BUTTON */  
 nav { margin-left: auto; }  
-  
+
 .menu-btn {  
     font-size: 28px;  
     color: orange; /* Matching your SOlr blue */  
@@ -256,13 +311,13 @@ nav { margin-left: auto; }
     transition: all 0.3s ease;  
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);  
 }  
-  
+
 .menu-btn:hover {  
     background: white;  
     transform: scale(1.1);  
     color: orange;  
 }  
-  
+
 /* UPDATED ACTION BUTTONS */  
 .btn {  
     background: orange; /* Dark blue for main buttons looks more professional */  
@@ -277,15 +332,15 @@ nav { margin-left: auto; }
     border: none;  
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);  
 }  
-  
+
 /* This forces all buttons to stay orange and look consistent */  
 .btn:hover, .btn-orange:hover {  
-    background-color #0a2540; /* A slightly darker/richer orange for the hover effect */  
+    background-color:; #0a2540; /* A slightly darker/richer orange for the hover effect */  
     color: black;              /* Keeps the text readable */  
     transform: scale(1.05);    /* Makes the button grow slightly (optional, but looks pro) */  
     transition: 0.3s;  
 }  
-  
+
 .hero {  
     position: relative;  
     height: 35vh;   /* FIXED */  
@@ -303,25 +358,25 @@ nav { margin-left: auto; }
     background-size: cover;  
     background-position: center;  
     background-repeat: no-repeat;  
-      
+
     opacity: 0;              /* 🔥 ADD THIS */  
     transition: opacity 1s ease-in-out;  /* smooth fade */  
 }  
-  
+
 /* ACTIVE IMAGE */  
 .hero-slide.active {  
     opacity: 1;  
 }  
-  
+
 .hero::before {  
     content: "";  
     position: absolute;  
     top: 0;  
     left: 0;  
-  
+
     width: 100%;  
     height: 100%;  
-  
+
     background: rgba(0,0,0,0.5);  
     z-index: 1;  
 }  
@@ -330,7 +385,7 @@ section {
     padding: 40px;  
     text-align: center;  
 }  
-  
+
 /* SERVICE BOX */  
 /* UPDATED SERVICE BOXES */  
 .service-box {  
@@ -347,22 +402,22 @@ section {
     transition: 0.3s;  
     text-align: left;     /* Lists are easier to read left-aligned */  
 }  
-  
+
 /* Make text bigger for the larger boxes */  
 .service-box h3 {  
     font-size: 1.6rem;  
     margin-bottom: 15px;  
 }  
-  
+
 .service-box ul {  
     font-size: 1.1rem;  
     line-height: 1.8;  
 }  
-  
+
 .service-box:hover {  
     transform: translateY(-10px);  
 }  
-  
+
 /* MOBILE FIX: Makes them big on phones too */  
 @media (max-width: 768px) {  
     .service-box {  
@@ -374,7 +429,7 @@ section {
 .service-box:hover {  
     transform: translateY(-5px);  
 }  
-  
+
 /* BADGE */  
 .badge {  
     background: gold;  
@@ -393,7 +448,7 @@ section {
     margin: 0 auto;  
     overflow-x: auto; /* Makes it scrollable on small phones */  
 }  
-  
+
 .comparison-table {  
     width: 100%;  
     border-collapse: collapse;  
@@ -402,32 +457,32 @@ section {
     overflow: hidden;  
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);  
 }  
-  
+
 .comparison-table th {  
     background: #0a2540;  
     color: white;  
     padding: 15px;  
     text-align: center;  
 }  
-  
+
 .comparison-table td {  
     padding: 12px;  
     border-bottom: 1px solid #eee;  
     text-align: center;  
 }  
-  
+
 .comparison-table tr:nth-child(even) {  
     background-color: #fdf6ed; /* Light orange tint for rows */  
 }  
-  
+
 .check-yes { color: green; font-weight: bold; }  
 .check-no { color: #ccc; }  
-  
+
 .popular {  
     background: #fff3cd;  
     font-weight: bold;  
 }  
-  
+
 /* SLIDER */  
 .slider {  
     max-width: 600px;  
@@ -442,7 +497,7 @@ section {
 .slide.active {  
     display: block;  
 }  
-  
+
 /* REVIEWS */  
 .review {  
     background: #f4f4f4;  
@@ -450,7 +505,7 @@ section {
     margin: 10px;  
     border-radius: 10px;  
 }  
-  
+
 /* FORM */  
 form {  
     max-width: 500px;  
@@ -462,7 +517,7 @@ input, textarea {
     margin: 10px 0;  
     padding: 10px;  
 }  
-  
+
 /* MAP */  
 iframe {  
     width: 100%;  
@@ -470,7 +525,7 @@ iframe {
     border: 0;  
     margin-top: 20px;  
 }  
-  
+
 /* FOOTER */  
 footer {  
     background: #0a2540;  
@@ -478,7 +533,7 @@ footer {
     text-align: center;  
     padding: 20px;  
 }  
-  
+
 /* FLOAT BUTTONS */  
 .wa-float, .call-float {  
     position: fixed;  
@@ -497,7 +552,7 @@ footer {
     background: #25D366 !important;   
     z-index: 5000;   
 }  
-  
+
 .menu-header {  
     display: flex;  
     justify-content: space-between;  
@@ -507,32 +562,37 @@ footer {
     cursor: pointer;  
     font-size: 24px;  
 }  
-.side-menu a {  
-    display: block;  
-    padding: 12px 0;  
-    text-decoration: none;  
-    color: #0a2540;  
-    font-weight: bold;  
-}   
-  
-.side-menu.active {  
-    right: 0;  
-}  
-  
-/* OVERLAY */  
-.overlay {  
-    position: fixed;  
-    width: 100%;  
-    height: 100%;  
-    background: orange;  
-    display: none;  
-    top: 0;  
-    left: 0;  
-}  
-.overlay.active {  
-    display: block;  
-}  
-  
+
+/* SIDE MENU */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 90%;
+    max-width: 400px;
+    height: 100vh;
+    background: orange;
+    padding: 20px 20px 80px 20px; /* extra bottom padding for button */
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    z-index: 2000;
+    overflow-y: auto; /* scrollable if content overflows */
+    box-shadow: -3px 0 15px rgba(0,0,0,0.2);
+}
+
+/* Menu active */
+.side-menu.active {
+    transform: translateX(0);
+}
+#overlay.active {
+    display: block;
+}
+
+/* Close button */
+.close-btn {
+    cursor: pointer;
+    font-size: 24px;
+}
 .why-choose-us {   
   background-color: orange;  
 }  
@@ -545,7 +605,7 @@ footer {
     background: orange !important;  
     color: #0a2540 !important; /* Dark blue text looks great on orange */  
 }  
-  
+
 .btn-orange:hover {  
     background: #ff6600 !important; /* Darker orange on hover */  
     transform: translateY(-2px);  
@@ -559,7 +619,7 @@ footer {
     letter-spacing: 1px;  
     animation: blink 2s infinite;  
 }  
-  
+
 @keyframes blink {  
     0% { opacity: 1; }  
     50% { opacity: 0.4; }  
@@ -571,15 +631,15 @@ footer {
     background: linear-gradient(135deg, #4b0082 0%, #2a004f 100%);  
     color: white; /* Makes the "Our Solar Packages" title white */  
     padding: 60px 20px;  
-    
+
 }  
-  
+
 #services h2 {  
     color: white;  
     font-size: 2.5rem;  
     margin-bottom: 30px;  
 }  
-  
+
 /* KEEP THE BOXES CLEAN */  
 #services .service-box {  
     background: white;   
@@ -587,23 +647,23 @@ footer {
     border: none;  
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);  
 }  
-  
+
 #services .service-box h3 {  
     color: #4B0082; /* Purple titles inside the boxes */  
 }   
-  
+
 /* ADD THIS FOR THE PROJECTS SECTION */  
 #gallery {  
     background: orange; /* Light Cream/Orange tint to match your table rows */  
     padding: 60px 20px;  
     border-top: 5px solid orange;  
 }  
-  
+
 #gallery h2 {  
     color: #0a2540; /* Dark blue heading */  
     margin-bottom: 20px;  
 }  
-  
+
 #gallery .slider img {  
     border: none;  
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);  
@@ -631,7 +691,7 @@ footer {
     background: #fdf6ed; /* Light cream to match your table */  
     padding: 60px 20px;  
 }  
-  
+
 .features-grid {  
     display: flex;  
     flex-wrap: wrap;  
@@ -639,7 +699,7 @@ footer {
     gap: 20px;  
     margin-bottom: 40px;  
 }  
-  
+
 .feature-item {  
     background: white;  
     padding: 20px;  
@@ -647,13 +707,13 @@ footer {
     width: 200px;  
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);  
 }  
-  
+
 .faq-container {  
     max-width: 700px;  
     margin: 0 auto;  
     text-align: left;  
 }  
-  
+
 .faq-item {  
     background: white;  
     margin-bottom: 10px;  
@@ -661,12 +721,12 @@ footer {
     border-left: 5px solid orange;  
     border-radius: 5px;  
 }  
-  
+
 /* MENU CONTENT UPGRADE */  
 .menu-content {  
     margin-top: 20px;  
 }  
-  
+
 /* CARD STYLE */  
 .menu-card {  
     background: white;  
@@ -675,7 +735,7 @@ footer {
     margin-bottom: 20px;  
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);  
 }  
-  
+
 /* TITLES */  
 .menu-card h2 {  
     color: #0a2540;  
@@ -683,7 +743,7 @@ footer {
     border-left: 5px solid orange;  
     padding-left: 10px;  
 }  
-  
+
 /* MINI FEATURES GRID */  
 .mini-features {  
     display: grid;  
@@ -691,25 +751,25 @@ footer {
     gap: 10px;  
     margin-top: 10px;  
 }  
-  
+
 .mini-features div {  
     background: #fdf6ed;  
     padding: 10px;  
     border-radius: 8px;  
     font-size: 14px;  
 }  
-  
+
 /* FAQ IMPROVEMENT */  
 .menu-card .faq-item {  
     border-bottom: 1px solid #eee;  
     padding: 10px 0;  
 }  
-  
+
 .menu-card .faq-item p {  
     font-size: 14px;  
     color: #555;  
 }  
-  
+
 /* SCROLLABLE MENU */  
 .side-menu {  
     overflow-y: auto;  
@@ -717,7 +777,7 @@ footer {
 .faq-item p {  
     display: none;  
 }  
-  
+
 .faq-item.active p {  
     display: block;  
 }  
@@ -731,7 +791,7 @@ body {
 body.loaded {  
     opacity: 1;  
 }  
-  
+
 </style>  </head>  <body>  <header class="header">  
     <div class="logo-circle">  
         <div class="logo-text">SOlr<span>mate</span></div>  
@@ -756,7 +816,7 @@ body.loaded {
 
 <hr>  
 
-  
+
 <div class="menu-content">  
 
 <!-- ABOUT -->  
@@ -954,7 +1014,7 @@ Request Quote
 <section style="background:#fdf6ed; padding:50px 20px; text-align:center;">  
     <h2>Estimate Your Savings</h2>  
     <p>See how much you can save with solar</p>  <input type="number" id="bill" placeholder="Your monthly electricity bill (R)" style="padding:10px; width:250px; margin:10px;">  
-  
+
 <br>  
 
 <button class="btn" onclick="calculateSavings()">Calculate</button>  
@@ -1002,16 +1062,16 @@ function openMenu() {
     document.getElementById("sideMenu").classList.add("active");  
     document.getElementById("overlay").classList.add("active");  
 }  
-  
+
 function closeMenu() {  
     document.getElementById("sideMenu").classList.remove("active");  
     document.getElementById("overlay").classList.remove("active");  
 }  
-  
+
 /* SLIDER - Added check to prevent errors */  
 let index = 0;  
 let slides = document.querySelectorAll(".slide");  
-  
+
 function showSlide() {  
     if (slides.length > 0) {  
         slides.forEach(s => s.classList.remove("active"));  
@@ -1019,15 +1079,15 @@ function showSlide() {
         index = (index + 1) % slides.length;  
     }  
 }  
-  
+
 if (slides.length > 0) {  
     setInterval(showSlide, 3000);  
 }  
-  
+
 /* HERO SLIDER */  
 let heroIndex = 0;  
 let heroSlides = document.querySelectorAll(".hero-slide");  
-  
+
 function changeHero() {  
     if (heroSlides.length > 0) {  
         heroSlides.forEach(slide => slide.classList.remove("active"));  
@@ -1035,7 +1095,7 @@ function changeHero() {
         heroIndex = (heroIndex + 1) % heroSlides.length;  
     }  
 }  
-  
+
 if (heroSlides.length > 0) {  
     setInterval(changeHero, 4000);  
 }  
@@ -1052,15 +1112,15 @@ window.onload = () => {
 </script>  <script>  
 function calculateSavings() {  
     let bill = document.getElementById("bill").value;  
-  
+
     if (bill === "" || bill <= 0) {  
         document.getElementById("result").innerHTML = "Please enter a valid amount.";  
         return;  
     }  
-  
+
     let savings = bill * 0.6; // assume 60% savings  
     let yearly = savings * 12;  
-  
+
     document.getElementById("result").innerHTML =  
         "💰 You could save about R" + savings.toFixed(0) +  
         " per month (R" + yearly.toFixed(0) + " per year)";  
